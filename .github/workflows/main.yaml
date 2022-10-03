@@ -21,3 +21,8 @@ jobs:
         uses: madhead/semver-utils@latest
         with:
           version: ${{ github.event.inputs.version }}
+      - name: Next Version
+        run: |
+          echo ${{ steps.next_version.outputs.inc-patch }}
+          echo ${{ steps.next_version.outputs.inc-minor }}
+          echo ${{ steps.next_version.outputs.inc-major }}
