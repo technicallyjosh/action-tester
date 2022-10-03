@@ -18,11 +18,11 @@ jobs:
           fetch-depth: 0
       - name: Get Next Version
         id: next_version
-        uses: madhead/semver-utils@latest
+        uses: technicallyjosh/next-version-action@v1
         with:
           version: ${{ github.event.inputs.version }}
+          type: minor
       - name: Next Version
         run: |
-          echo ${{ steps.next_version.outputs.inc-patch }}
-          echo ${{ steps.next_version.outputs.inc-minor }}
-          echo ${{ steps.next_version.outputs.inc-major }}
+          echo ${{ steps.next_version.outputs.next_version }}
+          echo ${{ steps.next_version.outputs.next_version_number }}
