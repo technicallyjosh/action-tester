@@ -20,4 +20,4 @@ jobs:
         id: next_version
         uses: madhead/semver-utils@latest
         with:
-          version: ${{ github.inputs.version }}
+          version: ${{ github.event.inputs.version }}
